@@ -1,0 +1,98 @@
+body {
+    font-family: sans-serif;
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  /* حالت شب */
+  body.night {
+    background-color: black;
+    color: white;
+  }
+  
+  body.night button {
+    background-color: crimson;
+  }
+  
+  body.night li {
+    background-color: #222;
+  }
+  
+  /* دکمه نایت مود */
+  #toggle-mode {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    z-index: 100;
+    background-color: #333b;
+    color: white;
+    transition: all 0.3s ease;
+  }
+  
+  body.night #toggle-mode {
+    background-color: crimson;
+    color: white;
+  }
+  
+  #toggle-mode:hover {
+    opacity: 0.85;
+  }
+
+  #logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 120px;
+    transition: filter 0.5s ease;
+  }
+  
+  body.night #logo {
+    content: url('logo-night.png');
+  }
