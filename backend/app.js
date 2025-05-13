@@ -1,10 +1,12 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors'); // برای حل مشکل کور اضافه کردم
+const path = require('path');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, '../frontend')));
 
 mongoose.connect('mongodb://mongo:27017/todos', {
   useNewUrlParser: true,
