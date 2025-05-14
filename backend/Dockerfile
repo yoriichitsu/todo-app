@@ -5,4 +5,4 @@ RUN npm install
 COPY backend/ ./
 COPY frontend/ ./frontend
 EXPOSE 3000
-CMD ["npm", "app.js"]
+CMD ["npm", "start"]
