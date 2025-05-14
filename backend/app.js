@@ -6,7 +6,11 @@ const path = require('path');
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, 'frontend')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'frontend', 'index.html'));
+});
 
 mongoose.connect('mongodb://mongo:27017/todos', {
   useNewUrlParser: true,
@@ -67,6 +71,3 @@ app.delete('/todos/:id', async (req, res) => {
 });
 
 app.listen(3000, () => console.log('Server is running on port 3000'));
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
-});
